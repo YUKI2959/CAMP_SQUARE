@@ -78,18 +78,6 @@ a {
   background: #87CEFA;
 }
 
-.nav__logout{
-  display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
-  color: #87CEFA;
-  text-decoration: none;
-  user-select: none;
-}
-.nav__logout:hover{
-  opacity: 0.5;
-}
-
 /* ログイン等 */
 .form__wrapper{
   min-height: calc(100vh - 161px);
