@@ -8,7 +8,7 @@
         <% if current_user == @submit.user%>
         <div class="prototype__manage">
           <%= link_to "編集する", edit_submit_path(@submit), class: :prototype__btn %>
-          <%= link_to "削除する", root_path, class: :prototype__btn %>
+          <%= link_to "削除する", submit_path(@submit), method: :delete, class: :prototype__btn %>
         </div>
         <% end %>
       <div class="prototype__image">
