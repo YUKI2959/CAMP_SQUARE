@@ -7,4 +7,6 @@ class User < ApplicationRecord
     # presence: true 空を許可しない
     validates :nickname, presence: true
     validates :profile, presence: true
+
+    has_many :submits, dependent: :destroy
 end

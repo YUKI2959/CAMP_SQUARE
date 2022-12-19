@@ -1,7 +1,12 @@
 <main class="main">
-  <div class="wrapper">
-    <div class="card__wrapper">
-      <%= render partial: "submit" %> 
+  <div class='form__wrapper'>
+    <div class="top__wrapper">
+      <%= render partial: "top" %> 
+    </div>
+    <div class="inner">
+      <div class="card__wrapper">
+        <%= render partial: "submit", collection: @submits %> 
+      </div>
     </div>
   </div>
 </main>
