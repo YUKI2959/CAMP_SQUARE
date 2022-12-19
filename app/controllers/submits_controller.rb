@@ -1,5 +1,6 @@
 class SubmitsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :set_submit, except: [:index, :new, :create]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @submits = Submit.includes(:user)
@@ -18,6 +19,9 @@ class SubmitsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
 
   def submit_params
@@ -26,5 +30,9 @@ class SubmitsController < ApplicationController
 
   def contributor_confirmation
     redirect_to root_path unless current_user == @submit.user
+  end
+
+  def set_submit
+    @submit = Submit.find(params[:id])
   end
 end
