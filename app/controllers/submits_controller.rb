@@ -2,6 +2,7 @@ class SubmitsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
+    @submits = Submit.includes(:user)
   end
 
   def new
