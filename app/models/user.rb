@@ -9,4 +9,5 @@ class User < ApplicationRecord
     validates :profile, presence: true
 
     has_many :submits, dependent: :destroy
+    has_many :coments, dependent: :destroy
 end

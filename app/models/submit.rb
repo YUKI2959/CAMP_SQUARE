@@ -4,7 +4,7 @@ class Submit < ApplicationRecord
   validates :content, presence: true
   validates :image, presence: true
 
-
+  has_many :coments, dependent: :destroy
   has_one_attached :image
   belongs_to :user
 end
