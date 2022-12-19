@@ -1,6 +1,6 @@
-class ComentController < ApplicationController
+class CommentsController < ApplicationController
   def create
-    @comment = Coment.new(comment_params)
+    @comment = Comment.new(comment_params)
     if @comment.save
       redirect_to submit_path(@comment.submit_id)
     else

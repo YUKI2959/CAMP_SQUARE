@@ -21,8 +21,8 @@ class SubmitsController < ApplicationController
   end
 
   def show
-    @comment = Coment.new
-    @comments = @submit.coments
+    @comment = Comment.new
+    @comments = @submit.comments
   end
 
   def edit
