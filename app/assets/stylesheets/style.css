@@ -159,6 +159,9 @@ a {
 }
 
 /* submit 投稿一覧 */
+.top__wrapper{
+  margin-bottom: 50px;
+}
 .greeting{
   margin-bottom: 20px;
 }
