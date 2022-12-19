@@ -6,13 +6,7 @@
         <div class="hero-text__main">キャンプで広がる輪</div>
         <div class="hero-text__sub">さあ、語り合おう。</div>
       </div>
-      <% if user_signed_in? %>
-        <%# 投稿機能追加時変更 %>
-        <%= link_to "テーマを投稿する", root_path, class: :service_btn %>
-        <%# 投稿機能追加時変更 %>
-      <% else %>
-        <%= link_to "テーマを投稿する", new_user_session_path, class: :service_btn %>
-      <% end %>
+        <%= link_to "テーマを投稿する", new_submit_path, class: :service_btn %>
     </div>
   </div>
   <div>
