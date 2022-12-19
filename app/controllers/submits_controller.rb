@@ -1,6 +1,7 @@
 class SubmitsController < ApplicationController
   before_action :set_submit, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :contributor_confirmation, only: [:edit, :update]
 
   def index
     @submits = Submit.includes(:user)
@@ -20,6 +21,17 @@ class SubmitsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @submit.update(submit_params)
+      redirect_to submit_path(@submit)
+    else
+      render :edit
+    end
   end
 
   private
