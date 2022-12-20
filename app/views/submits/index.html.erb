@@ -4,6 +4,11 @@
       <%= render partial: "top" %> 
     </div>
     <div class="inner">
+      <h2 class="page-heading"></h2>
+      <div class="card__wrapper">
+        <%= render partial: "submit", collection: @rank_submits_index %> 
+      </div>
+      <h2 class="page-heading">新着記事</h2>
       <div class="card__wrapper">
         <%= render partial: "submit", collection: @submits %> 
       </div>

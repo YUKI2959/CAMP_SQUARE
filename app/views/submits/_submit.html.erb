@@ -5,6 +5,7 @@
     <p class="card__summary">
       <%= submit.content %>
     </p>
+    <%= "アクセス数 #{submit.impressions_count}" %>
     <%= link_to  "by #{submit.user.nickname}", user_path(submit.user.id), class: :card__user %>
   </div>
 </div>

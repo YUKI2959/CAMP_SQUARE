@@ -4,7 +4,9 @@ class SubmitsController < ApplicationController
   before_action :contributor_confirmation, only: [:edit, :update, :destroy]
 
   def index
-    @submits = Submit.includes(:user)
+    @submits = Submit.order('created_at DESC')
+    @rank_submits = Submit.order(impressions_count: 'DESC')
+    @rank_submits_index = Submit.order(impressions_count: 'DESC').limit(2)
   end
 
   def new
@@ -23,6 +25,7 @@ class SubmitsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @submit.comments
+    impressionist(@submit, nil, unique: [:ip_address])
   end
 
   def edit
