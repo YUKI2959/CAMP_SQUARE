@@ -64,16 +64,16 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #999;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px #999 solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
 .nav__btn:hover{
   color: #fff;
-  background: #87CEFA;
+  background: #999;
 }
 
 /* ログイン等 */
@@ -171,6 +171,7 @@ a {
 .page-heading {
   font-size: 30px;
   margin-bottom: 28px;
+  display: flex;
 }
 .card__wrapper {
   display: flex;
@@ -180,7 +181,7 @@ a {
   min-height: calc(100vh - 161px);
 }
 .card {
-  width: 100%;
+  width: calc((100% - 80px) / 2);
   margin-bottom: 40px;
 }
 .card__img {
@@ -310,6 +311,27 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+}
+
+.user__edit{
+  display: flex;
+  padding-top: 16px;
+}
+.user__edit__btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.6em;
+  color: #999;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #999 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin-left: 50px;
+}
+.user__edit__btn:hover{
+  color: #f6f6f6;
+  background: #999;
 }
 /* フッター */
 
