@@ -1,0 +1,45 @@
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <% if current_user == @user%>
+          <%= "自分の情報" %>
+          <%= link_to "編集する", edit_user_path(current_user), class: :user__show__btn %>
+          <%= link_to "フレンドリスト", user_followers_path(current_user), class: :user__show__btn %>
+        <% else %>
+          <%= "#{@user.nickname}さんの情報" %>
+          <% if current_user.following?(@user) %>
+            <%= link_to "フォロー外す", user_relationships_path(@user.id), method: :delete, class: :user__show__btn %>
+          <% else %>
+            <%= link_to "フォローする", user_relationships_path(@user.id), method: :post, class: :user__show__btn %>
+          <% end %>
+        <% end %>
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">名前</th>
+            <td class="table__col2"><%= @user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">プロフィール</th>
+            <td class="table__col2"><%= @user.profile %></td>
+          </tr>
+        </tbody>
+      </table>
+      <% if current_user == @user%>
+        <h2 class="page-heading">
+          <%= "自分の投稿" %>
+        </h2>
+      <% else %>
+        <h2 class="page-heading">
+          <%= "#{@user.nickname}さんの投稿" %>
+        </h2>
+      <% end %>
+      <div class="user__card">
+        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
+        <%= render partial: "submits/submit",  collection: @submits %>
+      </div>
+    </div>
+  </div>
+</div>
