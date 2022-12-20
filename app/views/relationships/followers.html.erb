@@ -1,2 +1,9 @@
-<h1>Relationships#followers</h1>
-<p>Find me in app/views/relationships/followers.html.erb</p>
+<main class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <h2 class="page-heading">フレンドリスト</h2>
+        <%# 部分テンプレートでフォーム %>
+        <%= render partial: "relationships/follow_list",  locals: { users: @users } %>
+    </div>
+  </div>
+</main>
