@@ -19,11 +19,15 @@ class RelationshipsController < ApplicationController
     user = User.find(params[:user_id])
     @users = user.followers
   end
+  def frends
+    user = User.find(params[:user_id])
+    @frends = user.followings & @user.followers
+  end
 
   def show
     user = User.find(params[:user_id])
     @followers = user.followers
     @followings = user.followings
+    @frends = @followers & @followings
   end
-
 end

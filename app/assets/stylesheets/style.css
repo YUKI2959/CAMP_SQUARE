@@ -249,7 +249,8 @@ a {
   font-size: 16px;
   color: #999;
   text-align: center;
-  text-decoration: underline;
+  text-decoration: none;
+  margin-top: 10px;
 }
 .prototype__image{
   width: 40%;
@@ -265,6 +266,7 @@ a {
 .detail__title{
   font-size: 20px;
   font-weight: bold;
+  margin-bottom: 5px;
 }
 .prototype__manage{
   display: flex;
@@ -306,7 +308,7 @@ a {
 .comment_user{
   font-size: 16px;
   color: #999;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* ユーザーページ */
@@ -432,73 +434,4 @@ a {
   .table{
     width: 100%;
   }
-}
-
-
-
-
-
-body {
-  font-size: 14px;
-  color: #333;
-  margin: 0 auto;
-}
-h1,h2,h3,h4,h5,h6,p {
-  padding: 10px 0;
-  margin: 0;
-}
-ul,li {
-  padding: 0;
-  margin: 0;
-}
-header {
-  height: 60px;
-  display: flex;
-  padding: 0 60px;
-}
-li{
-  list-style: none;
-  padding: 20px;
-}
-.heading {
-  width: 50%;
-  margin-left: 30px;
-}
-.navbar {
-  width: 50%;
-}
-.nav-lists {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-around;
-}
-.red{
-  background-color: red;
-}
-.show-lists{
-  width: 200px;
-  position: absolute;
-  right: 370px;
-  top: 70px;
-  background-color: #ffffff;
-}
-.background-red{
-  background-color: #FF6666 ;
-  color: white;
-}
-.pull-down-list{
-  padding: 15px 35px 15px 15px;
-  border: 1px solid #eee;
-}
-.contents{
-  height: 100vh;
-  background-color: #f0f0f0;
-}
-.list-status{
-  width: 230px;
-}
-
-.hidden{
-  display: none;
 }
