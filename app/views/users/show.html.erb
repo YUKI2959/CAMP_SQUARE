@@ -5,7 +5,7 @@
         <% if current_user == @user%>
           <%= "自分の情報" %>
           <%= link_to "編集する", edit_user_path(current_user), class: :user__show__btn %>
-          <%= link_to "フレンドリスト", user_followers_path(current_user), class: :user__show__btn %>
+          <%= link_to "フレンドリスト", user_relationships_path(current_user), class: :user__show__btn %>
         <% else %>
           <%= "#{@user.nickname}さんの情報" %>
           <% if current_user.following?(@user) %>
