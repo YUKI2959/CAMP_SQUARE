@@ -4,14 +4,21 @@
       <%= render partial: "top" %> 
     </div>
     <div class="inner">
-      <h2 class="page-heading"></h2>
-      <div class="card__wrapper">
-        <%= render partial: "submit", collection: @rank_submits_index %> 
-      </div>
-      <h2 class="page-heading">新着記事</h2>
-      <div class="card__wrapper">
-        <%= render partial: "submit", collection: @submits %> 
-      </div>
+      <% if @submits.count > 4%>
+        <h2 class="page-heading-center">人気ランキング</h2>
+        <div class="card__wrapper">
+          <%= render partial: "submit", collection: @rank_submits_index %> 
+        </div>
+      <% end %>
+      <div class="index_center"> </div>
+      <% if @submits.count != "" %>
+        <h2 class="page-heading-center">新着記事</h2>
+        <div class="card__wrapper">
+          <%= render partial: "submit", collection: @submits %> 
+        </div>
+      <% else %>
+        <h2 class="page-heading-center">記事を投稿してみよう!!</h2>
+      <% end %>
     </div>
   </div>
 </main>

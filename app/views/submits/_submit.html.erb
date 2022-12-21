@@ -1,11 +1,15 @@
 <div class="card">
   <%= link_to image_tag(submit.image, class: :card__img ),submit_path(submit.id) %>
   <div class="card__body">
-    <%= link_to submit.title, submits_path(submit.id), class: :card__title%>
+    <%= link_to submit.title, submits_path(submit.id), class: :card__title %>
     <p class="card__summary">
       <%= submit.content %>
     </p>
-    <%= "アクセス数 #{submit.impressions_count}" %>
+    <p class="access">
+      <% if submit.impressions_count > 100 %>
+        <%= "アクセス数 #{submit.impressions_count}" %>
+      <% end %>
+    </p>
     <%= link_to  "by #{submit.user.nickname}", user_path(submit.user.id), class: :card__user %>
   </div>
 </div>
