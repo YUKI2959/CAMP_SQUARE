@@ -1,11 +1,22 @@
 <div class='account-page' id='account-page'>
   <div class='account-page__inner clearfix'>
     <div class='account-page__inner--left account-page__header'>
-      <h2>Edit Account</h2>
-      <h5>アカウントの編集</h5>
+      <h2>アカウントの編集</h2>
+      <h5>変更項目を更新できます</h5>
+      <div class="user-image-form">
+      <% if @user.image.present? %>
+        <%= image_tag @user.image, class: "user-image" %>
+      <% else %>
+        <%= image_tag ("noimage.jpg"), class: "user-image" %>
+      <% end %>
+      </div>
     </div>
     <div class='account-page__inner--right user-form'>
-      <%= form_with model: current_user, local: true do |f|%>
+      <%= form_with model: @user, local: true do |f|%>
+        <div class="field">
+          <%= f.label :image, "プロフィール画像(丸い画像がお勧めです)" %><br />
+          <%= f.file_field :image, id:"user_image" %>
+        </div>
         <div class='field'>
           <div class='field-label'>
             <%= f.label :nickname%>

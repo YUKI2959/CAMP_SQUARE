@@ -18,9 +18,9 @@
           </div>
           <% if user_signed_in? %>
             <div class="nav__right">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__btn %>
-              <%= link_to "マイページ", "/users/#{current_user.id}", class: :nav__btn %>
               <%= "#{current_user.nickname}""さん" %>
+              <%= link_to "マイページ", "/users/#{current_user.id}", class: :nav__btn %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__btn %>
           </div>
           <% else %>
             <div class="nav__right">
