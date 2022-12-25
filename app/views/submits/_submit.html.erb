@@ -1,5 +1,7 @@
 <div class="card">
-  <%= link_to image_tag(submit.image, class: :card__img ),submit_path(submit.id) %>
+  <div class="card__image-box">
+    <%= link_to image_tag(submit.image, class: :card__img ),submit_path(submit.id) %>
+  </div>
   <div class="card__body">
     <%= link_to submit.title, submits_path(submit.id), class: :card__title %>
     <p class="card__summary">

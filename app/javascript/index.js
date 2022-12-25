@@ -1,4 +1,4 @@
-window.addEventListener('load', function(){
+window.addEventListener('mouseover', function(lists){
 
   const pullDownButton = document.getElementById("lists")
   const pullDownParents = document.getElementById("pull-down")
