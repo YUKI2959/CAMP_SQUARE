@@ -1,0 +1,56 @@
+<main class="main">
+  <div class="inner">
+    <div class="prototype__wrapper">
+      <h2 class="page-heading">気になる同士</h2>
+        <% @entries.each do |e| %>
+      <div class="user-name">
+      <strong>
+        <div class="friend-content">
+          <% if e.user.image.present? %>
+            <%= image_tag e.user.image, class: "friend-image" %>
+          <% else %>
+            <%= image_tag ("noimage.jpg"), class: "friend-image" %>
+          <% end %>
+          <a class="rooms-user-link" href="/users/<%= e.user.id %>">
+            <%= e.user.nickname %>さん
+          </a>
+        </div>
+      </strong>
+      </div>
+    <% end %>
+    <div class="posts">
+      <div class="posts_comment">
+        <%= form_for @message do |f| %>
+          <div class="field">
+            <%= f.label :coment, "コメント" %><br/>
+            <%= f.text_field :content, placeholder: "メッセージを入力して下さい" , size: 50 ,id:"comment_content"%>
+          </div>
+          <div class="actions">
+          <%= f.hidden_field :room_id, value: @room.id %>
+          <%= f.submit "投稿",class: :form__btn %>
+          </div>
+        <% end %>
+      </div>
+      <div class="chat">
+        <% if @messages.present? %>
+          <% @messages.each do |m| %>
+            <div class="friend-content">
+              <% if m.user.image.present? %>
+                <%= image_tag m.user.image, class: "friend-image" %>
+              <% else %>
+                <%= image_tag ("noimage.jpg"), class: "friend-image" %>
+              <% end %>
+              <div class="chat-hukidashi"> 
+                <%= m.content %>
+                <div class="chat-time">
+                <a><%= m.created_at.strftime("%Y-%m-%d %H:%M")%></a>
+                  <%= link_to  "（#{m.user.nickname}）", user_path(m.user), class: :comment_user %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</main>

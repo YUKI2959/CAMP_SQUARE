@@ -220,6 +220,12 @@ a {
   margin-right: auto;
   margin-top: 3vh;
 }
+.chat-time{
+  display: flex;
+}
+.comment_user{
+  margin-left: 20px;
+}
 /* submit 投稿一覧 */
 .top__wrapper{
   margin-bottom: 50px;
@@ -248,7 +254,10 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  /* min-height: calc(100vh - 161px); */
+}
+
+.chat {
+  margin-top: 15px;
 }
 .card {
   width: calc((100% - 80px) / 2);
@@ -333,7 +342,7 @@ a {
   background: #999;
 }
 
-.prototype__comments{
+.posts{
   background-color: #f6f6f6;
   padding: 20px;
   margin: 28px 0 25px 0;
@@ -415,17 +424,31 @@ a {
   border: 1px #999 solid;
 }
 /* フレンドページ */
+.friend-image{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  border: 1px #999 solid;
+}
 .friend-inner {
   justify-content: space-between;
   display: flex;
   align-items: center;
 }
-.frien-left {
+.friend-left {
   display: flex;
   align-items: center;
+  margin-right: 15px;
+}
+.friend-content {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  margin-bottom: 15px;
 }
 .friend-spece {
-  margin-left: 15px;
 }
 .frien-light {
   margin-right: 450px;

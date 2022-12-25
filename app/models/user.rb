@@ -10,6 +10,8 @@ class User < ApplicationRecord
 
   has_many :submits, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :entries, dependent: :destroy
+  has_many :messages, dependent: :destroy
   has_one_attached :image
 
   # フォローしたときの処理
