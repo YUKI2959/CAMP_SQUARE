@@ -1,24 +1,72 @@
-# README
+# アプリケーション名
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+CAMP SQUARE
 
-Things you may want to cover:
+# アプリケーション概要
 
-* Ruby version
+キャンプ好きが集まり、コミュニュケーションをする。
+フレンド機能で同じ趣味の友人を作る。
 
-* System dependencies
+# URL
 
-* Configuration
+https://camp-square.onrender.com
 
-* Database creation
+# テスト用アカウント
 
-* Database initialization
+- ID: admin
+- Pass: 2222
+- メールアドレス: taro@gmail.com
+- パスワード: taro12345
 
-* How to run the test suite
+# 利用方法
 
-* Services (job queues, cache servers, search engines, etc.)
+## ログインする
+#### 1. "トップページ"から"ログイン"を選択
+#### 2. "Email"、"Password"に情報を入力して "Log in"を選択
 
-* Deployment instructions
+## 話題を投稿する
+#### 1. "トップページ"から"テーマを投稿する"を選択、"新規投稿ページ"に移動
+#### 2. "話題のタイトル"、"内容"にテキストを記載。"プロトタイプの画像"で画像を選択する
+#### 3. "保存する"を選択
 
-* ...
+## 話題ページでコメントをする
+#### 1. "トップページ"から話題をクリックし、"話題ページ"に移動
+#### 2. 画面下部の"コメント"に文字を打ち込み、"送信する"を選択
+
+## 友達登録をする
+#### 1. "トップページ"の話題に記載してある"by○○○"、"話題ページ"のコメント欄などから、自分以外のユーザーを選択し"ユーザー詳細画面"に移動
+#### 2. "フォローする"を選択
+
+## フレンド情報を確認する
+#### 1. "トップページ"の"マイページ"などから、"マイページ"に移動
+#### 2. "フレンドリスト"を選択
+
+# アプリケーションを作成した背景
+#### 趣味についてコミュニケーションを取るだけであれば"Twitter"などで可能。しかし特定テーマについて熱く語れるようなアプリかと言われると疑問である。そこで、ディープな話題も語り合えるような、"小さいが熱い"をテーマとして、自分の趣味の趣味であるキャンプ専門のSNSを作成することにした。
+
+
+# 洗い出した要件
+https://docs.google.com/spreadsheets/d/1-kzQmYfQdD-ENC-2oQSZHwjWnhNZoFUBHN3-NFFT1SU/edit#gid=982722306
+
+# 実装予定の機能
+- ブックマーク機能
+- SNSでのログイン機能
+- グループ機能
+- DM機能
+
+# データベース設計
+[![Image from Gyazo](https://i.gyazo.com/193a1eabfa5908ae2fdfede77070cf8b.png)](https://gyazo.com/193a1eabfa5908ae2fdfede77070cf8b)
+
+# 画面遷移図
+
+[![Image from Gyazo](https://i.gyazo.com/598d6c140cbac7f9d7b290f06d4fa8c3.png)](https://gyazo.com/598d6c140cbac7f9d7b290f06d4fa8c3)
+
+# 開発環境
+- フロントエンド
+- バックエンド
+- インフラ
+- テキストエディタ
+- タスク管理
+
+# 工夫したポイント
+#### ユーザビリティを高められるよう工夫をした。構想段階ではユーザー登録をしなければコメントと、投稿ができない仕様だったが気軽に使えるようにするために、ログインに問わず使えるように変更。また、画面上部に"マイページ遷移ボタン"や"お気に入りページ遷移ボタン"を並べていたが、アイコンクリックから行うようにしてシンプルにした。
