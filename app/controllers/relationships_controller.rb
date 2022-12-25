@@ -19,6 +19,7 @@ class RelationshipsController < ApplicationController
     user = User.find(params[:user_id])
     @users = user.followers
   end
+  # 相互フォロー一覧
   def frends
     user = User.find(params[:user_id])
     @frends = user.followings & @user.followers
@@ -29,5 +30,9 @@ class RelationshipsController < ApplicationController
     @followers = user.followers
     @followings = user.followings
     @frends = @followers & @followings
+    if @frends != []
+      @followers -= @frends
+      @followings -= @frends
+    end
   end
 end
