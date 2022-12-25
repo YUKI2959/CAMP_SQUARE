@@ -69,3 +69,5 @@ gem 'impressionist'
 gem 'carrierwave'
 
 gem "aws-sdk-s3", require: false
+
+gem 'haml-rails'

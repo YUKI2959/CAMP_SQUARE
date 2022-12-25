@@ -112,6 +112,15 @@ GEM
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    haml (6.1.1)
+      temple (>= 0.8.2)
+      thor
+      tilt
+    haml-rails (2.1.0)
+      actionpack (>= 5.1)
+      activesupport (>= 5.1)
+      haml (>= 4.0.6)
+      railties (>= 5.1)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -238,6 +247,7 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     ssrf_filter (1.1.1)
+    temple (0.9.1)
     thor (1.2.1)
     thread_safe (0.3.6)
     tilt (2.0.11)
@@ -280,6 +290,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   carrierwave
   devise
+  haml-rails
   image_processing (~> 1.2)
   impressionist
   jbuilder (~> 2.7)

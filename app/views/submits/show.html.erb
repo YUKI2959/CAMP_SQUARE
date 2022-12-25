@@ -28,26 +28,34 @@
           </p>
         </div>
       </div>
-      <div class="prototype__comments">
+      <div class="posts">
         <% if user_signed_in? %>
           <%= form_with(model: [@submit, @comment], local: true) do |f| %>
             <div class="field">
-              <%= f.label :coment, "コメント" %><br />
-              <%= f.text_field :coment, id:"comment_content" %>
+              <%= f.label :coment, "コメント" %><br/>
+              <%= f.text_field :coment, placeholder: "メッセージを入力して下さい",size: 50, id:"comment_content" %>
             </div>
             <div class="actions">
               <%= f.submit "送信する", class: :form__btn  %>
             </div>
           <% end %>
         <% end %>
-        <%# // ログインしているユーザーには上記を表示する %>
         <ul class="comments_lists">
-          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
           <% @comments.each do |comment| %>
-            <li class="comments_list">
-              <%= comment.coment %>
-              <%= link_to  "（#{comment.user.nickname}）", user_path(comment.user), class: :comment_user %>
-            </li>
+            <div class="friend-content">
+              <% if comment.user.image.present? %>
+                <%= image_tag comment.user.image, class: "friend-image" %>
+              <% else %>
+                <%= image_tag ("noimage.jpg"), class: "friend-image" %>
+              <% end %>
+              <div class="chat-hukidashi"> 
+                <%= comment.coment %>
+                <div class="chat-time">
+                <a><%= comment.created_at.strftime("%Y-%m-%d %H:%M")%></a>
+                  <%= link_to  "（#{comment.user.nickname}）", user_path(comment.user), class: :comment_user %>
+                </div>
+              </div>
+            </div>
           <% end %>
         </ul>
       </div>

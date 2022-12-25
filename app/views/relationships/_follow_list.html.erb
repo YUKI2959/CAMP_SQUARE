@@ -1,19 +1,13 @@
 <% if users != [] %>
   <% users.each do |user| %>
     <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
       <tbody>
         <div class="friend-inner">
-          <div class="frien-left">
+          <div class="friend-left">
             <% if user.image.present? %>
-              <%= image_tag user.image, class: "header-image" %>
+              <%= image_tag user.image, class: "friend-image" %>
             <% else %>
-              <%= image_tag ("noimage.jpg"), class: "header-image" %>
+              <%= image_tag ("noimage.jpg"), class: "friend-image" %>
             <% end %>
             <div class="friend-spece">
               <%= user.nickname %>
