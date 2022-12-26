@@ -30,6 +30,5 @@
 yarn-debug.log*
 .yarn-integrity
 
-public/sample/
-app/assets/images/
-public/images/
+/public
+/app/assets/images/

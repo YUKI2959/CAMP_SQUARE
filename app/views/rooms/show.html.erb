@@ -9,7 +9,7 @@
           <% if e.user.image.present? %>
             <%= link_to image_tag(e.user.image, class: :friend__image ),user_path(e.user.id) %>
           <% else %>
-            <%= link_to image_tag("noimage.jpg", class: :friend__image ),user_path(e.user.id) %>
+            <%= link_to image_tag('/noimage.jpg', class: :friend__image ),user_path(e.user.id) %>
           <% end %>
           <a class="rooms-user-link" href="/users/<%= e.user.id %>">
             <%= "#{e.user.nickname}さん" %>
@@ -38,7 +38,7 @@
               <% if m.user.image.present? %>
                 <%= image_tag m.user.image, class: "friend__image" %>
               <% else %>
-                <%= image_tag ("noimage.jpg"), class: "friend__image" %>
+                <%= image_tag ('/noimage.jpg'), class: "friend__image" %>
               <% end %>
               <div class="chat-hukidashi"> 
                 <%= m.content %>
