@@ -5,11 +5,11 @@
 
         <%# 部分テンプレートでフォーム %>
         <h3 class="follow">相互フォローユーザー</h3>
-        <%= render partial: "relationships/follow_list",  locals: { users: @frends } %>
+        <%= render partial: "follow_list",  locals: { users: @frends } %>
         <h3 class="follow">フォロワーユーザー</h3>
-        <%= render partial: "relationships/follow_list",  locals: { users: @followers } %>
+        <%= render partial: "follow_list",  locals: { users: @followers } %>
         <h3 class="follow">フォローユーザー</h3>
-        <%= render partial: "relationships/follow_list",  locals: { users: @followings } %>
+        <%= render partial: "follow_list",  locals: { users: @followings } %>
     </div>
   </div>
 </main>

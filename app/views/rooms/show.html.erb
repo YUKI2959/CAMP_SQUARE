@@ -7,12 +7,12 @@
       <strong>
         <div class="friend-content">
           <% if e.user.image.present? %>
-            <%= image_tag e.user.image, class: "friend-image" %>
+            <%= link_to image_tag(e.user.image, class: :friend__image ),user_path(e.user.id) %>
           <% else %>
-            <%= image_tag ("noimage.jpg"), class: "friend-image" %>
+            <%= link_to image_tag("noimage.jpg", class: :friend__image ),user_path(e.user.id) %>
           <% end %>
           <a class="rooms-user-link" href="/users/<%= e.user.id %>">
-            <%= e.user.nickname %>さん
+            <%= "#{e.user.nickname}さん" %>
           </a>
         </div>
       </strong>
@@ -36,9 +36,9 @@
           <% @messages.each do |m| %>
             <div class="friend-content">
               <% if m.user.image.present? %>
-                <%= image_tag m.user.image, class: "friend-image" %>
+                <%= image_tag m.user.image, class: "friend__image" %>
               <% else %>
-                <%= image_tag ("noimage.jpg"), class: "friend-image" %>
+                <%= image_tag ("noimage.jpg"), class: "friend__image" %>
               <% end %>
               <div class="chat-hukidashi"> 
                 <%= m.content %>

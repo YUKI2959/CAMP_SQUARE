@@ -5,12 +5,12 @@
         <div class="friend-inner">
           <div class="friend-left">
             <% if user.image.present? %>
-              <%= image_tag user.image, class: "friend-image" %>
+              <%= link_to image_tag(user.image, class: :friend__image ),user_path(user.id) %>
             <% else %>
-              <%= image_tag ("noimage.jpg"), class: "friend-image" %>
+              <%= link_to image_tag("noimage.jpg", class: :friend__image ),user_path(user.id) %>
             <% end %>
             <div class="friend-spece">
-              <%= user.nickname %>
+              <%= link_to user.nickname,user_path(user.id) %>
               フォロー数: <%= user.followings.count %>
               フォロワー数: <%= user.followers.count %>
             </div>
