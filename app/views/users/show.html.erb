@@ -14,6 +14,20 @@
             <% else %>
               <%= link_to "フォローする", user_relationships_path(@user.id), method: :post, class: :user__show__btn %>
             <% end %>
+            <% unless @user.id == current_user.id %>
+              <% if (current_user.followings.include?(@user) && @user.followings.include?(current_user)) %>
+                <% if @isRoom == true %>
+                  <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="user__show__btn">チャットへ</a>
+                <% else %>
+                  <%= form_for @room do |f| %>
+                    <%= fields_for @entry do |e| %>
+                      <%= e.hidden_field :user_id, value: @user.id %>
+                    <% end %>
+                    <%= f.submit "チャットを始める", class:"btn btn-primary btn-lg user-show-chat"%>
+                  <% end %>
+                <% end %>
+              <% end %>
+            <% end %>
           <% end %>
         <% end %>
       </h2>
@@ -39,23 +53,8 @@
         </h2>
       <% end %>
       <div class="user__card">
-        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
         <%= render partial: "submits/submit",  collection: @submits %>
       </div>
-      <% unless @user.id == current_user.id %>
-        <% if (@user.followings & @user.followers) %>
-        <% if @isRoom == true %>
-          <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg">チャットへ</a>
-        <% else %>
-          <%= form_for @room do |f| %>
-            <%= fields_for @entry do |e| %>
-              <%= e.hidden_field :user_id, value: @user.id %>
-            <% end %>
-            <%= f.submit "チャットを始める", class:"btn btn-primary btn-lg user-show-chat"%>
-          <% end %>
-        <% end %>
-        <% end %>
-      <% end %>
     </div>
   </div>
 </div>

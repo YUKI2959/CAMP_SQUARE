@@ -19,11 +19,6 @@ class RelationshipsController < ApplicationController
     user = User.find(params[:user_id])
     @users = user.followers
   end
-  # 相互フォロー一覧
-  def frends
-    user = User.find(params[:user_id])
-    @frends = user.followings & @user.followers
-  end
 
   def show
     user = User.find(params[:user_id])
