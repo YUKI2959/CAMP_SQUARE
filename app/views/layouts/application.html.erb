@@ -15,6 +15,14 @@
         <div class="nav__center">
           <%= link_to image_tag('/logo.jpg', class: :logo), root_path %>
         </div>
+
+          <%= link_to image_tag('logo.jpg', class: :logo), root_path %>
+          <%= link_to image_tag("logo.jpg", class: :logo), root_path %>
+          <%= link_to image_tag("/assets/images/ogo.jpg", class: :logo), root_path %>
+          <%= link_to image_tag("/images/ogo.jpg", class: :logo), root_path %>
+          <%= link_to image_tag("/public/logo.jpg", class: :logo), root_path %>
+          <%= image_tag asset_path("logo.jpg", class: :logo) %>
+
         <% if user_signed_in? %>
           <div class="nav__light">
             <h3><%= "#{current_user.nickname}""さん" %></h3>
