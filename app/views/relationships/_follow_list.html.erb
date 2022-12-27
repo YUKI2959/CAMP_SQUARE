@@ -7,7 +7,7 @@
             <% if user.image.present? %>
               <%= link_to image_tag(user.image, class: :friend__image ),user_path(user.id) %>
             <% else %>
-              <%= link_to image_tag('/noimage.jpg', class: :friend__image ),user_path(user.id) %>
+              <%= link_to image_tag("noimage.jpg", class: :friend__image ),user_path(user.id) %>
             <% end %>
             <div class="friend-spece">
               <%= link_to user.nickname,user_path(user.id) %>
