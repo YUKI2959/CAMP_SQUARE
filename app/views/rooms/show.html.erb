@@ -38,7 +38,7 @@
               <% if m.user.image.present? %>
                 <%= image_tag m.user.image, class: "friend__image" %>
               <% else %>
-                <%= image_tag ("noimage.jpg"), class: "friend__image" %>
+                <%= image_tag "noimage.jpg", class: "friend__image" %>
               <% end %>
               <div class="chat-hukidashi"> 
                 <%= m.content %>
