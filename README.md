@@ -62,7 +62,7 @@ https://docs.google.com/spreadsheets/d/1-kzQmYfQdD-ENC-2oQSZHwjWnhNZoFUBHN3-NFFT
 - グループ機能
 
 # データベース設計
-[![Image from Gyazo](https://i.gyazo.com/04f0e4fd41589b3f19daf55eb01e043d.png)](https://gyazo.com/04f0e4fd41589b3f19daf55eb01e043d)
+[![Image from Gyazo](https://i.gyazo.com/6c8ec3e288e32a5cc06dfc845b1c50a3.png)](https://gyazo.com/6c8ec3e288e32a5cc06dfc845b1c50a3)
 
 # 画面遷移図
 
